@@ -8,8 +8,8 @@ AoS(Array of Structs)和SoA(Struct of Arrays)是存储结构体数组的两种�
 // C++
 struct Enemy
 {
-	int state;
-	int x;
+    int state;
+    int x;
     int y;
 };
 
@@ -22,7 +22,7 @@ SoA则会：
 // C++
 struct Enemies
 {
-	int state[MAX_ENEMIES];
+    int state[MAX_ENEMIES];
     int x[MAX_ENEMIES];
     int y[MAX_ENEMIES];
 };
