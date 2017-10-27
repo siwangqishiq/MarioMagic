@@ -88,7 +88,7 @@ int demon = 50;
 
 // 更新
 if (++numer == demon) {
-	numer = 0;
+    numer = 0;
     playBeepSound();
     if (--demon < 5)
     	demon = 5;
