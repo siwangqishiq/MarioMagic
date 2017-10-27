@@ -7,16 +7,16 @@
 ```java
 // 错误的演示1
 void draw() {
-	if (keyPressed && key == 'z')
-    	handle jumping
+    if (keyPressed && key == 'z')
+        handle jumping
 }
 ```
 
 ```java
 // 错误的演示2
 void keyPressed() {
-	if (key == 'z')
-    	handle jumping
+    if (key == 'z')
+        handle jumping
 }
 ```
 
@@ -24,20 +24,20 @@ void keyPressed() {
 // 推荐的做法
 boolean jumpPressed = false;
 void handleKey(boolean b) {
-	if (key == 'z' || key == 'Z') {
-    	jumpPressed = b;
+    if (key == 'z' || key == 'Z') {
+        jumpPressed = b;
     }
 }
 void keyPressed() {
-	handleKey(true);
+    handleKey(true);
 }
 void keyReleased() {
-	handleKey(false);
+    handleKey(false);
 }
 
 void draw() {
-	if (jumpPressed)
-    	// handle jumping
+    if (jumpPressed)
+        // handle jumping
 }
 ```
 
@@ -52,25 +52,25 @@ final int KEY_JUMP  = 4;
 int keypad = 0;
 
 void setKey(int bit, boolean b) {
-	if (b)
-		keypad |= bit;
+    if (b)
+        keypad |= bit;
     else
-    	keypad &= ~bit;
+        keypad &= ~bit;
 }
 
 boolean isKeyPressed(int bit) {
-	return (keypad & bit) == bit;
+    return (keypad & bit) == bit;
 }
 
 void handleKey(boolean b) {
-	if (key == 'z' || key == 'Z')
-    	setKey(KEY_JUMP, b);
+    if (key == 'z' || key == 'Z')
+        setKey(KEY_JUMP, b);
     ...
 }
 
 void draw() {
-	if (isKeyPressed(KEY_JUMP))
-    	// handle jumping
+    if (isKeyPressed(KEY_JUMP))
+        // handle jumping
 }
 ```
 
@@ -84,10 +84,9 @@ void draw() {
 boolean prevJumpPressed = false;
 
 void everyFrame() {
-	if (!prevJumpPressed && jumpPressed) {
-		// handle jump
+    if (!prevJumpPressed && jumpPressed) {
+        // handle jump
     }
     prevJumpPressed = jumpPressed;
 }
-
 ```
