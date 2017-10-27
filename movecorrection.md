@@ -35,5 +35,5 @@ playerY = playerY & 0xF0; // 相当于 playerY -= playerY % 16;
 
 ```java
 while (referenceLayer.getColorAt(playerX, playerY) == COLOR_GROUND)
-	playerY--;
+    playerY--;
 ```
