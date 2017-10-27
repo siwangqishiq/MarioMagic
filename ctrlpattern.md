@@ -9,18 +9,18 @@
 ```java
 int state = 0;
 void everyFrame() {
-	switch (state) {
+    switch (state) {
     case 0: // Main Menu
         ...
         if (user click Play)
-        	state = 1;
+            state = 1;
         break;
-	case 1: // Game Mode
-    	...
+    case 1: // Game Mode
+        ...
     case 2: // Game Over
-    	...
+        ...
     case 3: // High Score
-    	...
+        ...
     }
 }
 ```
@@ -33,16 +33,16 @@ void everyFrame() {
 
 ```
 + OperModeExecutionTree
-	+ TitleScreenMode
-	+ GameMode
-		+ ScreenRoutines
-		+ PlayerCtrlRoutine
-			+ OnGroundStateSub
-			+ JumpSwimSub
-			+ FallingSub
-			+ ClimbingSub
-	+ VictoryMode
-	+ GameOverMode
+    + TitleScreenMode
+    + GameMode
+        + ScreenRoutines
+        + PlayerCtrlRoutine
+            + OnGroundStateSub
+            + JumpSwimSub
+            + FallingSub
+            + ClimbingSub
+    + VictoryMode
+    + GameOverMode
 ```
 
 请根据英文自行推测其含义。:)
@@ -59,7 +59,7 @@ StateFunc states[] = { state_1, state_2 };
 int curState = 0;
 void gameloop()
 {
-	while (curState >= 0) {
+    while (curState >= 0) {
     	states[curState]();
     }
 }
@@ -71,26 +71,26 @@ void gameloop()
 class State
 {
 public:
-	virtual void update();
+    virtual void update();
 };
 
 class State1
 {
 public:
-	virtual void update() { /* implementation */ }
+    virtual void update() { /* implementation */ }
 };
 
 class State2
 {
 public:
-	virtual void update() { /*implementation */ }
+    virtual void update() { /*implementation */ }
 };
 
 State *curState = NULL;
 
 void gameloop()
 {
-	while (curState) {
+    while (curState) {
     	curState->update();
     }
 }
@@ -114,21 +114,21 @@ void gameloop()
 boolean menuMode = true;
 boolean powerMode = false;
 void everyFrame() {
-	if (menuMode) {
-    	/* menu logic */
+    if (menuMode) {
+        /* menu logic */
         ...
         if (user click Play)
-        	menuMode = false;
+            menuMode = false;
     }
     if (!menuMode && powerMode) {
-    	/* power mode logic */
+        /* power mode logic */
     }
     if (!menuMode) {
-    	/* game play logic */
+        /* game play logic */
         if (player press X key)
-        	powerMode = true;
+            powerMode = true;
         if (player press Esc)
-        	menuMode = true;
+            menuMode = true;
     }
 }
 ```
@@ -140,15 +140,15 @@ void everyFrame() {
 ```java
 boolean jumpSpringAnimCtrl = false;
 void everyFrame() {
-	if (!jumpSpringAnimCtrl) {
-    	playerY += playerYSpd;
+    if (!jumpSpringAnimCtrl) {
+        playerY += playerYSpd;
     }
     ...
     if (player collides with jump spring)
-    	jumpSpringAnimCtrl = true;
+        jumpSpringAnimCtrl = true;
     ...
     if (jumpSpringAnimCtrl) {
-    	playerY += 2;
+        playerY += 2;
     }
 }
 ```
