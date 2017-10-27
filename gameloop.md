@@ -4,10 +4,10 @@
 
 ```java
 while (running) {
-	beginTime = getTime();
+    beginTime = getTime();
 
-	// 处理操作系统的事件or消息
-	handleEvents();
+    // 处理操作系统的事件or消息
+    handleEvents();
 
     // 读取按键、鼠标或游戏手柄的输入
     readJoypad();
@@ -16,7 +16,7 @@ while (running) {
     update();
 
     // 绘制此帧画面
-	render();
+    render();
 
     // 等待一定时间以保持帧率
     endTime = getTime();
